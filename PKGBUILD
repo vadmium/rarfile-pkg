@@ -1,5 +1,5 @@
 _proj=rarfile
-pkgname="python3-$_proj"
+pkgname="python2-$_proj"
 pkgver=2.5
 pkgrel=1
 pkgdesc="Rar archive reader for Python"
@@ -16,6 +16,6 @@ md5sums=(da87eb870c9e504394b91c9618ff74c6)
 
 package() {
   cd "$srcdir/$_proj-$pkgver"
-  python3 setup.py install --root="$pkgdir" --optimize=1
+  python2 setup.py install --root="$pkgdir" --optimize=1
   install -D -m644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
 }
