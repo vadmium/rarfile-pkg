@@ -2,7 +2,7 @@ _proj=rarfile
 #_python=python2 _pyver=2
 #_python=python3 _pyver=""
 pkgbase="python-$_proj"
-pkgname="$_python-$_proj"
+pkgname="$_python-$_proj"  # AUR workaround: hardcode into .AURINFO
 pkgver=2.6
 pkgrel=2
 pkgdesc="Rar archive reader for Python"
