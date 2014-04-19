@@ -8,7 +8,11 @@ pkgdesc="Rar archive reader for Python"
 arch=(any)
 url="https://pypi.python.org/pypi/$_proj"
 license=(custom:ISC)
-makedepends=("python$_pyver" python-docutils "python$_pyver-sphinx")
+makedepends=("python$_pyver")
+
+# These only required to build the documentation:
+makedepends+=(python-docutils "python$_pyver-sphinx")
+
 depends=("python$_pyver")
 optdepends=("unrar: For decompression")
 provides=("python-$_proj")
