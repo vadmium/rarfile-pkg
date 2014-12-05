@@ -2,8 +2,8 @@ _proj=rarfile
 #_python=python2 _pyver=2
 #_python=python3 _pyver=""
 pkgname="$_python-$_proj"
-pkgver=2.6
-pkgrel=3
+pkgver=2.7
+pkgrel=1
 pkgdesc="Rar archive reader for Python"
 arch=(any)
 url="https://pypi.python.org/pypi/$_proj"
@@ -14,12 +14,16 @@ makedepends=("python$_pyver")
 makedepends+=(python-docutils "python$_pyver-sphinx")
 
 depends=("python$_pyver")
-optdepends=("unrar: For decompression")
+optdepends=(
+  "unrar: Decompressing compressed files"
+  'libarchive: Alternative to "unrar"'
+  "python$_pyver-crypto: Parsing encrypted headers"
+)
 provides=("python-$_proj")
 source=(
   "https://pypi.python.org/packages/source/r/$_proj/$_proj-$pkgver.tar.gz"
 )
-md5sums=(50ce3f3fdb9196a00059a5ea7b3739fd)
+md5sums=(d143205f22078830451e0066c123580d)
 
 build() {
   cd "$srcdir/$_proj-$pkgver"
